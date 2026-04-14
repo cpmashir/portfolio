@@ -150,6 +150,48 @@
     .timeline-dot{left:-1px;}
     .contact-inner{padding:3rem 1.5rem;}
     .projects-grid{grid-template-columns:1fr;}
+
+    #leetcode { padding: 110px 0; }
+
+  .leetcode-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+  .leetcode-container:hover {
+  border-color: var(--accent);
+  background: var(--card-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+ .leetcode-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 15px var(--accent-glow));
+}
+
+ .leetcode-meta {
+  text-align: center;
+  max-width: 600px;
+  color: var(--text2);
+  font-size: 0.95rem;
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+  .leetcode-container { padding: 1.5rem; }
+}
   }
 </style>
 </head>
@@ -168,6 +210,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#leetcode">DSA LeetCode</a></li>
   </ul>
   <div style="display:flex;gap:.75rem;align-items:center;">
     <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">&#9728;</button>
@@ -426,6 +469,22 @@
       <div class="cert-chip">Job Application Essentials</div>
       <div class="cert-chip">TinkerHub CUCEK &#8212; Active Member</div>
       <div class="cert-chip">National Service Scheme (NSS)</div>
+    </div>
+  </div>
+</section>
+<section id="leetcode" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Problem Solving</span>
+      <h2 class="section-title">DSA Progress</h2>
+    </div>
+    <div class="leetcode-container">
+      <a href="https://leetcode.com/cpmashir" target="_blank" rel="noopener">
+        <img src="https://github-readme-leetcode-card.romitsagu.com/cpmashir?theme=radical&show=graph,recent" alt="Ashir's LeetCode Stats" class="leetcode-img">
+      </a>
+      <div class="leetcode-meta">
+        <p>Active on LeetCode, solving problems across <strong>Arrays, Strings, and Machine Learning algorithms</strong> to sharpen logical thinking and optimization skills.</p>
+      </div>
     </div>
   </div>
 </section>
