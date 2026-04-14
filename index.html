@@ -53,7 +53,30 @@
   .hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap;}
   .meta-item{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--text2);}
   .meta-item .ico{color:var(--accent);}
-  .hero-avatar{width:230px;height:230px;border-radius:28px;flex-shrink:0;background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(99,102,241,.08));border:1px solid rgba(59,130,246,.2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:4.5rem;font-weight:800;color:var(--accent);box-shadow:0 0 70px var(--accent-glow),inset 0 0 40px rgba(59,130,246,.05);position:relative;user-select:none;}
+.hero-avatar {
+  width: 230px;
+  height: 230px;
+  border-radius: 28px;
+  flex-shrink: 0;
+  overflow: hidden; /* CRITICAL: This clips the photo to your 28px corners */
+  background: linear-gradient(135deg,rgba(59,130,246,.15),rgba(99,102,241,.08));
+  border: 1px solid rgba(59,130,246,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 0 70px var(--accent-glow), inset 0 0 40px rgba(59,130,246,.05);
+  z-index: 1; /* Keeps it above the ::after glow */
+}
+
+/* Add this to make the photo fill the box */
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This prevents the photo from looking stretched */
+  display: block;
+}
   .hero-avatar::after{content:'';position:absolute;inset:-1px;border-radius:28px;background:linear-gradient(135deg,rgba(59,130,246,.25),transparent 60%);z-index:-1;filter:blur(10px);}
   .section-header{text-align:center;margin-bottom:4rem;}
   .section-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:block;}
@@ -202,15 +225,16 @@
 <div class="orb orb-3"></div>
 
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">CPM<span>.</span></a>
+  <a href="#hero" class="nav-logo">CPM Ashir<span>.</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
+    li><a href="#leetcode">DSA LeetCode</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#leetcode">DSA LeetCode</a></li>
+    <
   </ul>
   <div style="display:flex;gap:.75rem;align-items:center;">
     <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">&#9728;</button>
@@ -223,7 +247,7 @@
     <div class="hero-inner">
       <div>
         <div class="hero-badge">Open to Opportunities</div>
-        <h1 class="hero-name">C P M Ashir<br><span class="accent">ML &amp; Data Science</span></h1>
+        <h1 class="hero-name">C P M Ashir<br><span class="accent">AI/ML &amp; Data Science</span></h1>
         <p class="hero-role"><strong>AI/ML Research Intern</strong> &nbsp;&#xB7;&nbsp; Data Science &nbsp;&#xB7;&nbsp; Front-End Developer</p>
         <p class="hero-desc">Passionate about building intelligent systems at the intersection of machine learning, NLP, and data science. Pursuing B.Tech IT at CUSAT &amp; BS Data Science at IIT Madras, with hands-on research experience at IIIT Ranchi.</p>
         <div class="hero-cta">
@@ -236,7 +260,9 @@
           <div class="meta-item"><span class="ico">&#128300;</span>Research Intern @ IIIT Ranchi</div>
         </div>
       </div>
-      <div class="hero-avatar">CA</div>
+      <div class="hero-avatar">
+    <img src="profile.jpg" alt="C P M Ashir">
+      </div>
     </div>
   </div>
 </section>
@@ -272,7 +298,7 @@
     <div class="skills-wrapper">
       <div class="skill-group reveal">
         <div class="skill-group-title">&#9889; Languages</div>
-        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">C++</span><span class="skill-tag">PHP</span></div>
+        <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">C/C++</span><span class="skill-tag">PHP</span></div>
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">&#129302; Machine Learning &amp; NLP</div>
@@ -292,7 +318,7 @@
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">&#129504; Core CS</div>
-        <div class="skill-tags"><span class="skill-tag">DSA</span><span class="skill-tag">Software Engineering</span><span class="skill-tag">Operating Systems</span><span class="skill-tag">GenAI</span></div>
+        <div class="skill-tags"><span class="skill-tag">DSA</span><span class="skill-tag">Software Engineering</span><span class="skill-tag">Operating Systems</span><span class="skill-tag">GenAI</span></div><span class="skill-tag">OOPs</span><span class="skill-tag">DBMS</span><span class="skill-tag">Computer Networks</span><span class="skill-tag">System Design</span></div>
       </div>
     </div>
   </div>
@@ -492,12 +518,14 @@
 <section id="contact">
   <div class="container">
     <div class="contact-inner reveal">
-      <h2 class="contact-title">Let&#39;s Work Together</h2>
-      <p class="contact-sub">Open to research collaborations, internships, and exciting projects in AI/ML and Data Science. Based in Perinthalmanna, Malappuram, Kerala &#127470;&#127475;</p>
+      <h2 class="contact-title">Let's Work Together</h2>
+      <p class="contact-sub">Open to research collaborations, internships, and exciting projects in AI/ML and Data Science. Based in Perinthalmanna, Malappuram, Kerala 🇮🇳</p>
       <div class="contact-links">
         <a href="mailto:cpmashir@gmail.com" class="contact-link">&#9993; ashircpm@gmail.com</a>
         <a href="https://linkedin.com/in/cpmashir" target="_blank" rel="noopener" class="contact-link">in LinkedIn</a>
         <a href="https://github.com/cpmashir" target="_blank" rel="noopener" class="contact-link">&#9910; GitHub</a>
+        <a href="https://x.com/ashircpm" target="_blank" rel="noopener" class="contact-link">𝕏 X (Twitter)</a>
+        <a href="https://instagram.com/cpmashir" target="_blank" rel="noopener" class="contact-link">📸 Instagram</a>
         <a href="tel:+919778190991" class="contact-link">&#128222; +91 97781 90991</a>
       </div>
     </div>
