@@ -106,9 +106,36 @@ h2.accent, h2 .accent {
   .skill-group{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.75rem;transition:all .3s;}
   .skill-group:hover{border-color:rgba(59,130,246,.25);background:var(--card-hover);transform:translateY(-3px);}
   .skill-group-title{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:1.2rem;}
-  .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
-  .skill-tag{background:var(--accent-dim);color:var(--accent-light);border:1px solid rgba(59,130,246,.15);padding:.3rem .75rem;border-radius:100px;font-size:.78rem;font-weight:500;transition:all .2s;}
-  .skill-tag:hover{background:rgba(59,130,246,.2);border-color:var(--accent);transform:scale(1.05);}
+  .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  /* Increase gap: first value is vertical, second is horizontal */
+  gap: 0.8rem 0.6rem; 
+  padding-top: 0.5rem;
+}
+
+.skill-tag {
+  background: var(--accent-dim);
+  color: var(--accent-light);
+  border: 1px solid rgba(59,130,246,0.15);
+  padding: 0.4rem 0.9rem; /* Slightly more padding for a better "pill" look */
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  
+  /* CRITICAL: This prevents "Computer Networks" from splitting into two lines */
+  white-space: nowrap; 
+  
+  /* Ensures the tags behave correctly as individual blocks */
+  display: inline-block;
+}
+
+.skill-tag:hover {
+  background: rgba(59,130,246,0.2);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
   #experience{padding:110px 0;}
   .timeline{position:relative;}
   .timeline::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,transparent,var(--accent) 20%,var(--accent) 80%,transparent);}
@@ -533,6 +560,8 @@ h2.accent, h2 .accent {
       <p class="contact-sub">Open to research collaborations, internships, and exciting projects in AI/ML and Data Science. Based in Perinthalmanna, Malappuram, Kerala 🇮🇳</p>
       <div class="contact-links">
         <a href="mailto:cpmashir@gmail.com" class="contact-link">&#9993; Email</a>
+        <a href="https://wa.me/919778190991?text=Hi Ashir!" target="_blank" rel="noopener" class="contact-link">
+          &#128172; WhatsApp</a>
         <a href="https://linkedin.com/in/cpmashir" target="_blank" rel="noopener" class="contact-link">in LinkedIn</a>
         <a href="https://github.com/cpmashir" target="_blank" rel="noopener" class="contact-link">&#9910; GitHub</a>
         <a href="https://x.com/ashircpm" target="_blank" rel="noopener" class="contact-link">𝕏 Twitter</a>
