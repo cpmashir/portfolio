@@ -42,6 +42,17 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
   .hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem;}
   .hero-name .accent{color:var(--accent);}
+  /* Remove the .hero-name prefix so it works everywhere */
+.accent {
+  color: var(--accent);
+}
+
+/* Add this if you want the h2 to match the Syne font style */
+h2.accent, h2 .accent {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
   .hero-role{font-size:clamp(1rem,2vw,1.15rem);color:var(--text2);font-weight:300;margin-bottom:1.5rem;letter-spacing:.01em;}
   .hero-role strong{color:var(--text);font-weight:500;}
   .hero-desc{font-size:1rem;color:var(--text2);max-width:520px;line-height:1.85;margin-bottom:2.25rem;}
