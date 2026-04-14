@@ -40,13 +40,15 @@
   .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent-dim);border:1px solid rgba(59,130,246,.2);color:var(--accent-light);font-size:.75rem;font-weight:600;padding:.3rem .9rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:.05em;text-transform:uppercase;}
   .hero-badge::before{content:'●';animation:pulse 2s infinite;font-size:.55em;}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-  .hero-name{font-family:'Syne',sans-serif;color: var;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem;}
+  .hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.75rem;}
   .hero-name .accent{color:var(--accent);}
   /* Remove the .hero-name prefix so it works everywhere */
 .accent {
   color: var(--accent);
 }
-
+:root {
+  --accent: #10b981; /* Just change this and the whole site updates! */
+}
 /* Add this if you want the h2 to match the Syne font style */
 h2.accent, h2 .accent {
   font-family: 'Syne', sans-serif;
