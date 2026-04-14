@@ -250,8 +250,26 @@ h2.accent, h2 .accent {
 }
 
 /* Adjust for mobile */
-@media (max-width: 768px) {
-  .leetcode-container { padding: 1.5rem; }
+@media(max-width:768px){
+    .hamburger{display:flex;}
+    .nav-links{display:none; /* ... keep your existing nav code ... */ }
+    
+    .hero-inner{
+        grid-template-columns: 1fr;
+        text-align: center; /* Centers your text on mobile */
+    }
+
+    /* FIX STARTS HERE */
+    .hero-avatar {
+        display: flex;       /* Change from 'none' to 'flex' */
+        width: 160px;        /* Slightly smaller for mobile screens */
+        height: 160px;
+        margin: 0 auto 2rem; /* Centers the image and adds space below it */
+    }
+    /* FIX ENDS HERE */
+
+    .about-grid{grid-template-columns:1fr;}
+    /* ... keep the rest of your media query ... */
 }
   }
 </style>
