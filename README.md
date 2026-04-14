@@ -3,8 +3,7 @@
 Welcome to my personal portfolio repository! This is a single-page website built to showcase my projects, skills, and contact information. 
 
 ## 🌐 Live Demo
-You can view the live site here: **[Insert your Vercel URL here]**
-
+You can view the live site here: https://cpmashir.vercel.app/
 ## 🛠️ Built With
 * **HTML5** - Structure and Content
 * **CSS3** - Styling and Layout (Internal)
